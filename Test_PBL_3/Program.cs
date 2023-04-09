@@ -1,9 +1,13 @@
+using Microsoft.EntityFrameworkCore;
 using Test_PBL_3.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<AppDBContext>();
+
+// My change
+builder.Services.AddDbContext<AppDBContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 

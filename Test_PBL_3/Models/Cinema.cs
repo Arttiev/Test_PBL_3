@@ -12,8 +12,6 @@ namespace Test_PBL_3.Models
         public string description { get; set; }
 
         // relation 
-        public int MovieID { get; set; }
-        [ForeignKey("MovieID")]
         public List<Movie> movies { get; set; }
 
     }
