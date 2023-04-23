@@ -18,7 +18,7 @@ namespace Test_PBL_3.Migrations
                 name: "PK_Actor_Movies",
                 table: "Actor_Movies");
 
-            migrationBuilder.DropIndex(
+            migrationBuilder.DropIndex( 
                 name: "IX_Actor_Movies_MovieID",
                 table: "Actor_Movies");
 

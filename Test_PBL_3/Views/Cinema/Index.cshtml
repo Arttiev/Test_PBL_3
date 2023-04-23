@@ -1,0 +1,36 @@
+﻿@model List<Cinema>
+@{
+	ViewData["Title"] = "List of Actors";
+}
+
+<div class = "row">
+	<div class = "col-md-8 offset-md-2">
+		<table class="table">
+			<thead>
+				<tr> 
+					<th class = "align-middle">Picture</th>
+					<th class = "align-middle">Cinema Name</th>
+					<th class = "align-middle">Description</th>
+					<th class = "align-middle">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td class = "align-middle">
+							<img class = "rounded-circle" src = "@item.logo" style="max-width: 150px">
+						</td>
+						<td class = "align-middle">@Html.DisplayFor(modelitem=>item.name)</td>
+						<td class = "align-middle">@Html.DisplayFor(modelitem=>item.description)</td>
+						<td class = "align-middle">
+
+								<button>Edit</button>|<button>Show</button>
+
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

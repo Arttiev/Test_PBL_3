@@ -17,14 +17,18 @@ namespace Test_PBL_3.Models
         public Movie_category Movie_Category { get; set; }  
         // relation 
 
-        public ICollection<Actor_Movie> Actor_Movies { get; set; }
+        public virtual ICollection<Actor_Movie> Actor_Movies { get; set; }
 
         public int CinemaID { get; set; }
         [ForeignKey("CinemaID")]
-        public Cinema Cinema { get; set; }
+        public virtual Cinema Cinema { get; set; }
 
         public int ProducerID { get; set; }
         [ForeignKey("ProducerID")]
-        public Producer Producer { get; set; }
+        public virtual Producer Producer { get; set; }
+        public Movie()
+        {
+            Actor_Movies = new HashSet<Actor_Movie>(); 
+        }
     }
 }
